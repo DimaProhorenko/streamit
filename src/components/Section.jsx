@@ -24,7 +24,7 @@ Section.Title = function SectionTitle({
 	...restProps
 }) {
 	return (
-		<h2 className={`${className}`} {...restProps}>
+		<h2 className={`text-xl ${className}`} {...restProps}>
 			{children}
 		</h2>
 	);
@@ -41,7 +41,10 @@ Section.Header = function SectionHeader({
 	...restProps
 }) {
 	return (
-		<div className={`${className}`} {...restProps}>
+		<div
+			className={`${className} flex items-center justify-between`}
+			{...restProps}
+		>
 			{children}
 		</div>
 	);
