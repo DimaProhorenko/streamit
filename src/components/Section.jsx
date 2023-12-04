@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Section({ useContainer = true, children, ...restProps }) {
 	return (
-		<section className="py-4">
+		<section className="py-4 lg:py-8">
 			{useContainer ? (
 				<Container {...restProps}>{children}</Container>
 			) : (
@@ -45,7 +45,7 @@ Section.Header = function SectionHeader({
 }) {
 	return (
 		<div
-			className={`${className} flex items-center justify-between mb-4`}
+			className={`${className} flex items-center justify-between mb-4 lg:mb-8`}
 			{...restProps}
 		>
 			{children}

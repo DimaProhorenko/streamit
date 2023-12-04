@@ -5,7 +5,6 @@ import { COMMING_SOON_FULL } from '../constants/api';
 
 function Upcoming() {
 	const [movies, setMovies] = useMovies(COMMING_SOON_FULL);
-	console.log(movies);
 	return (
 		<Section>
 			<Section.Header>

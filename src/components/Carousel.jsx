@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import PropTypes from 'prop-types';
 import { Navigation } from 'swiper/modules';
 
-function Carousel({ children }) {
+function Carousel({ children, settings = {}, ...restProps }) {
 	const swiperRef = useRef(null);
 
 	const $handlePrevClick = () => {
@@ -13,32 +13,38 @@ function Carousel({ children }) {
 		swiperRef?.current.slideNext();
 	};
 
+	const swiperSettings = {
+		modules: [Navigation],
+		grabCursor: true,
+		loop: true,
+		slidesPerView: 2,
+		spaceBetween: 20,
+		breakpoints: {
+			640: {
+				slidesPerView: 3,
+			},
+			920: {
+				slidesPerView: 4,
+			},
+			1020: {
+				slidesPerView: 5,
+			},
+			1220: {
+				slidesPerView: 6,
+			},
+		},
+		...settings,
+	};
+
 	return (
 		<Swiper
-			modules={[Navigation]}
-			grabCursor={true}
-			loop={true}
-			slidesPerView={2}
-			spaceBetween={20}
-			breakpoints={{
-				640: {
-					slidesPerView: 3,
-				},
-				920: {
-					slidesPerView: 4,
-				},
-				1020: {
-					slidesPerView: 5,
-				},
-				1220: {
-					slidesPerView: 6,
-				},
-			}}
+			{...swiperSettings}
 			className="relative"
 			ref={swiperRef}
 			onBeforeInit={(swiper) => {
 				swiperRef.current = swiper;
 			}}
+			{...restProps}
 		>
 			{React.Children.map(children, (child) => {
 				if (React.isValidElement(child)) {
@@ -55,6 +61,7 @@ function Carousel({ children }) {
 
 Carousel.propTypes = {
 	children: PropTypes.any.isRequired,
+	settings: PropTypes.object,
 };
 
 Carousel.Slide = function CarouselSlide({ children }) {
@@ -74,7 +81,7 @@ Carousel.Button = function CarouselButton({
 }) {
 	return (
 		<button
-			className={`${className} w-8 h-8 rounded-full bg-white text-black flex items-center justify-center`}
+			className={`${className} w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-black bg-opacity-30 text-white border border-white flex items-center justify-center hover:bg-white hover:text-black`}
 			onClick={handleClick}
 		>
 			{children}

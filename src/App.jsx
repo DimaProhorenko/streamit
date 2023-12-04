@@ -1,10 +1,10 @@
-import useMovies from './hooks/useMovies';
-import { TopRated, Upcoming } from './containers';
-import { COMMING_SOON_FULL } from './constants/api';
+import { Hero, TopRated, Upcoming } from './containers';
 
 function App() {
+	console.log(import.meta.env.VITE_API_KEY);
 	return (
 		<>
+			<Hero />
 			<Upcoming />
 			<TopRated />
 		</>
