@@ -23,6 +23,8 @@ function Upcoming() {
 							/>
 						</Carousel.Slide>
 					))}
+					<Carousel.Prev />
+					<Carousel.Next />
 				</Carousel>
 			)}
 		</Section>

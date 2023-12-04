@@ -24,7 +24,10 @@ Section.Title = function SectionTitle({
 	...restProps
 }) {
 	return (
-		<h2 className={`text-xl ${className}`} {...restProps}>
+		<h2
+			className={`font-bold text-xl ${className} lg:text-2xl`}
+			{...restProps}
+		>
 			{children}
 		</h2>
 	);

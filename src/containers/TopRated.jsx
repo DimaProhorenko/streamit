@@ -16,9 +16,15 @@ function TopRated() {
 				<Carousel>
 					{topMovies.slice(0, numOfSlides).map((movie) => (
 						<Carousel.Slide key={movie.id}>
-							<MovieCard cover={movie.poster_path} />
+							<MovieCard
+								cover={movie.poster_path}
+								title={movie.title}
+								release={movie.release_date}
+							/>
 						</Carousel.Slide>
 					))}
+					<Carousel.Prev />
+					<Carousel.Next />
 				</Carousel>
 			)}
 		</Section>
