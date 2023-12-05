@@ -24,6 +24,8 @@ function TopTv() {
 							/>
 						</Carousel.Slide>
 					))}
+					<Carousel.Prev />
+					<Carousel.Next />
 				</Carousel>
 			)}
 		</Section>

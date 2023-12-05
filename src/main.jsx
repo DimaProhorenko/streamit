@@ -8,7 +8,6 @@ import 'swiper/css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<i className="fa-solid fa-desktop"></i>
 		<App />
 	</React.StrictMode>
 );
