@@ -5,7 +5,7 @@ function BackImage({ cover, className = '', children }) {
 	return (
 		<div
 			style={{ backgroundImage: `url('${cover}')` }}
-			className={`bg-cover bg-no-repeat bg-center relative before:absolute before:inset-0 before:bg-back-gradient ${className}`}
+			className={`pt-20 lg:pt-40 bg-cover bg-no-repeat bg-center relative before:absolute before:inset-0 before:bg-back-gradient ${className}`}
 		>
 			<div className="relative z-10">{children}</div>
 		</div>
