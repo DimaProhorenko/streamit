@@ -58,4 +58,16 @@ Section.Header.propTypes = {
 	children: PropTypes.any.isRequired,
 };
 
+Section.Center = function SectionCenter({ children }) {
+	return (
+		<div className="flex flex-col items-center justify-center text-center">
+			{children}
+		</div>
+	);
+};
+
+Section.Center.propTypes = {
+	children: PropTypes.any.isRequired,
+};
+
 export default Section;

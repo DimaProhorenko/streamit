@@ -11,7 +11,7 @@ function TopTv() {
 		<Section>
 			<Section.Header>
 				<Section.Title>Top Rated Tv series</Section.Title>
-				<Link>View all</Link>
+				<Link to="/">View all</Link>
 			</Section.Header>
 			{tv?.length > 0 && (
 				<Carousel>

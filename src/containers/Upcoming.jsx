@@ -9,7 +9,7 @@ function Upcoming() {
 		<Section>
 			<Section.Header>
 				<Section.Title>Upcoming Movies</Section.Title>
-				<Link href="/">View all</Link>
+				<Link to="/">View all</Link>
 			</Section.Header>
 			{movies && (
 				<Carousel>

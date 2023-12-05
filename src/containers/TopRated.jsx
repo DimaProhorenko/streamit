@@ -10,7 +10,7 @@ function TopRated() {
 		<Section>
 			<Section.Header>
 				<Section.Title>Top Rated Movies</Section.Title>
-				<Link href="#">View More</Link>
+				<Link to="#">View More</Link>
 			</Section.Header>
 			{topMovies && (
 				<Carousel>

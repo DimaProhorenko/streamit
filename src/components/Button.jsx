@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 function Button({ children, to, className, onClick }) {
-	const btnClasses = `block relative overflow-hidden px-8 py-2 bg-primary text-white cursor-pointer rounded-md before:absolute before:inset-0 before:bg-red-700 hover:before:scale-x-0 before:transition-transform uppercase ${
+	const btnClasses = `inline-block relative overflow-hidden px-8 py-2 bg-primary text-white cursor-pointer rounded-md before:absolute before:inset-0 before:bg-red-700 hover:before:scale-x-0 before:transition-transform uppercase ${
 		className || ''
 	}`;
 	const spanClasses = 'relative z-[1]';
