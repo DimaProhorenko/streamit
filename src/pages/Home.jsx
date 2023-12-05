@@ -1,11 +1,11 @@
-import { BackImage } from '../components';
+import { BackImage, Title } from '../components';
 
 import coverImg from '../assets/backdrop.jpg';
 
 function Home() {
 	return (
 		<BackImage cover={coverImg} className="min-h-screen">
-			<h1>WELCOME</h1>
+			<Title>Unlimited movies, TV shows, and more</Title>
 		</BackImage>
 	);
 }
