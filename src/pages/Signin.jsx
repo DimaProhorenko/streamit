@@ -1,4 +1,4 @@
-import { BackImage, Section, Card } from '../components';
+import { BackImage, Section, Card, Title, Form } from '../components';
 import coverImg from '../assets/backdrop.jpg';
 
 function Signin() {
@@ -6,7 +6,12 @@ function Signin() {
 		<BackImage cover={coverImg} className="min-h-screen">
 			<Section>
 				<Section.Center>
-					<Card>Hello</Card>
+					<Card className="text-left w-full max-w-md">
+						<Title size="lg">Sign In</Title>
+						<Form>
+							<Form.Field label="Email" type="email" />
+						</Form>
+					</Card>
 				</Section.Center>
 			</Section>
 		</BackImage>
