@@ -7,3 +7,4 @@ export { default as Flex } from './Flex';
 export { default as BackImage } from './BackImage';
 export { default as Title } from './Title';
 export { default as Lead } from './Lead';
+export { default as Card } from './Card';
