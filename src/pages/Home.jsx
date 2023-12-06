@@ -1,7 +1,7 @@
 import { BackImage, Section, Title, Link, Lead } from '../components';
 import { SIGN_IN, SIGN_UP } from '../constants/routes';
 import coverImg from '../assets/backdrop.jpg';
-import { HomeHeader } from '../feature';
+import { HomeHeader, WhyJoin } from '../feature';
 
 function Home() {
 	return (
@@ -24,6 +24,7 @@ function Home() {
 					</Section.Center>
 				</Section>
 			</BackImage>
+			<WhyJoin />
 		</>
 	);
 }

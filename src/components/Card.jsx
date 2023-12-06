@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-function Card({ children, className = '' }) {
+function Card({ children, className = '', spacing = 'p-8 md:p-10 lg:p-14' }) {
 	return (
 		<div
-			className={`p-8 md:p-10 lg:p-14 rounded-md bg-black bg-opacity-40 ${className}`}
+			className={`${spacing} rounded-md bg-black bg-opacity-40 ${className}`}
 		>
 			{children}
 		</div>
@@ -13,7 +13,7 @@ function Card({ children, className = '' }) {
 Card.propTypes = {
 	children: PropTypes.any.isRequired,
 	className: PropTypes.string,
-	spacing: PropTypes.number,
+	spacing: PropTypes.string,
 };
 
 export default Card;
