@@ -19,7 +19,7 @@ Form.Field = function FormField({ label, ...props }) {
 	const [field, meta] = useField(props);
 
 	return (
-		<div className="relative">
+		<div className="relative mb-4 lg:mb-6">
 			<input
 				{...field}
 				{...props}

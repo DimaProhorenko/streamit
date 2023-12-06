@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 
-function Link({ to, children, ...restProps }) {
+function Link({ to, children, className = '', ...restProps }) {
 	return (
 		<RouterLink
 			to={to}
 			{...restProps}
-			className="text-primary font-medium capitalize hover:underline"
+			className={`text-primary font-medium capitalize hover:underline ${className}`}
 		>
 			{children}
 		</RouterLink>
@@ -14,9 +14,9 @@ function Link({ to, children, ...restProps }) {
 }
 
 Link.propTypes = {
-	href: PropTypes.string.isRequired,
 	children: PropTypes.any.isRequired,
 	to: PropTypes.string.isRequired,
+	className: PropTypes.string,
 };
 
 export default Link;
