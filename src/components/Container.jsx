@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 function Container({ className = '', children, ...restProps }) {
 	return (
-		<div className={`container ${className}`} {...restProps}>
+		<div className={`container py-1 ${className}`} {...restProps}>
 			{children}
 		</div>
 	);

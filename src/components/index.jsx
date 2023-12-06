@@ -9,3 +9,5 @@ export { default as Title } from './Title';
 export { default as Lead } from './Lead';
 export { default as Card } from './Card';
 export { default as Form } from './Form';
+export { default as Logo } from './Logo';
+export { default as Header } from './Header';

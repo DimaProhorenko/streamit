@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Form as FormikForm, useField } from 'formik';
+import { Formik, useField } from 'formik';
 import Button from './Button';
 
 function Form({ children, ...props }) {
