@@ -1,3 +1,4 @@
+import { object } from 'yup';
 import {
 	BackImage,
 	Section,
@@ -8,6 +9,11 @@ import {
 	Link,
 } from '../components';
 import { SIGN_UP } from '../constants/routes';
+import {
+	emailValidation,
+	passwordValidation,
+} from '../constants/inputValidation';
+
 import coverImg from '../assets/backdrop.jpg';
 
 function Signin() {
@@ -19,7 +25,19 @@ function Signin() {
 						<Title size="xl" className="font-medium">
 							Sign In
 						</Title>
-						<Form>
+						<Form
+							initialValues={{
+								email: '',
+								password: '',
+							}}
+							validationSchema={object({
+								...emailValidation,
+								...passwordValidation,
+							})}
+							onSubmit={(values) => {
+								console.log(values);
+							}}
+						>
 							<Form.Field
 								label="Email"
 								type="email"
@@ -32,9 +50,7 @@ function Signin() {
 								name="password"
 								id="password"
 							/>
-							<Button display="block" type="submit">
-								Sign in
-							</Button>
+							<Form.Submit display="block">Sign in</Form.Submit>
 						</Form>
 						<p className="mt-6 md:mt-8 lg:mt-9">
 							New to Streamit?{' '}

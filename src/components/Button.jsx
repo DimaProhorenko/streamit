@@ -10,7 +10,7 @@ function Button({
 }) {
 	const btnClasses = `${
 		display === 'block' ? 'block w-full py-3' : display
-	} relative overflow-hidden px-8 py-2 bg-primary text-white cursor-pointer rounded-md before:absolute before:inset-0 before:bg-red-700 hover:before:scale-x-0 before:transition-transform uppercase ${
+	} relative overflow-hidden px-8 py-2 bg-primary text-white cursor-pointer rounded-md before:absolute before:inset-0 before:bg-red-700 enabled:hover:before:scale-x-0 before:transition-transform uppercase disabled:opacity-50 disabled:cursor-not-allowed ${
 		className || ''
 	}`;
 	const spanClasses = 'relative z-[1]';

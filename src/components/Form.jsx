@@ -1,10 +1,20 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form as FormikForm, useField } from 'formik';
+import Button from './Button';
 
 function Form({ children, ...props }) {
 	return (
 		<Formik {...props}>
-			<FormikForm>{children}</FormikForm>
+			{/* <FormikForm>{children}</FormikForm> */}
+			{({ isValid, dirty }) =>
+				React.Children.map(children, (child) => {
+					if (React.isValidElement(child)) {
+						return React.cloneElement(child, { isValid, dirty });
+					}
+					return child;
+				})
+			}
 		</Formik>
 	);
 }
@@ -15,14 +25,15 @@ Form.propTypes = {
 
 export default Form;
 
-Form.Field = function FormField({ label, ...props }) {
-	const [field, meta] = useField(props);
+Form.Field = function FormField(props) {
+	const { label, isValid, dirty, ...restProps } = props;
+	const [field, meta] = useField(restProps);
 
 	return (
 		<div className="relative mb-4 lg:mb-6">
 			<input
 				{...field}
-				{...props}
+				{...restProps}
 				placeholder={label}
 				className="block placeholder:text-transparent w-full bg-gray-500 rounded-md px-4 pt-6 pb-2 outline-none peer leading-3"
 			/>
@@ -32,6 +43,9 @@ Form.Field = function FormField({ label, ...props }) {
 			>
 				{label}
 			</label>
+			{meta.touched && meta.error && (
+				<Form.Error className="mt-2">{meta.error}</Form.Error>
+			)}
 		</div>
 	);
 };
@@ -40,4 +54,45 @@ Form.Field.propTypes = {
 	label: PropTypes.string.isRequired,
 	id: PropTypes.any,
 	name: PropTypes.string,
+	isValid: PropTypes.bool,
+	dirty: PropTypes.bool,
+};
+
+Form.Error = function FormError({ children, className = '' }) {
+	return (
+		<span className={`block text-red-500 text-sm ${className}`}>
+			{children}
+		</span>
+	);
+};
+
+Form.Error.propTypes = {
+	children: PropTypes.any.isRequired,
+	className: PropTypes.string,
+};
+
+Form.Submit = function FormSubmit({
+	children,
+	isValid,
+	dirty,
+	className,
+	...restProps
+}) {
+	return (
+		<Button
+			className={className}
+			{...restProps}
+			type="submit"
+			disabled={!(isValid && dirty)}
+		>
+			{children}
+		</Button>
+	);
+};
+
+Form.Submit.propTypes = {
+	children: PropTypes.any.isRequired,
+	isValid: PropTypes.bool,
+	dirty: PropTypes.bool,
+	className: PropTypes.string,
 };
