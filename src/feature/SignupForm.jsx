@@ -22,7 +22,7 @@ function SignupForm() {
 		>
 			<Form.Field label="Email" name="email" id="email" />
 			<Form.Field label="Password" name="password" id="password" />
-			<Form.Submit>Next</Form.Submit>
+			<Form.Submit display="block">Next</Form.Submit>
 		</Form>
 	);
 }

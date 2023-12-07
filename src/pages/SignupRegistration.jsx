@@ -3,7 +3,7 @@ import { SIGN_UP_REG_FORM } from '../constants/routes';
 
 function SignupRegistration() {
 	return (
-		<>
+		<div className="text-center">
 			<Title className="text-gray-300 font-normal">Step 1 of 3</Title>
 			<Title size="xl" className="font-medium">
 				Finish setting up your account
@@ -15,7 +15,7 @@ function SignupRegistration() {
 			<Button display="block" to={`../${SIGN_UP_REG_FORM}`}>
 				Next
 			</Button>
-		</>
+		</div>
 	);
 }
 export default SignupRegistration;

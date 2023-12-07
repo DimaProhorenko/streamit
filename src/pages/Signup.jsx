@@ -14,7 +14,7 @@ function Signup() {
 				</Header.Content>
 			</Header>
 			<Section useContainer={false}>
-				<Container className="px-2 max-w-[450px] text-center">
+				<Container className="px-2 max-w-[450px]">
 					<Outlet />
 				</Container>
 			</Section>
