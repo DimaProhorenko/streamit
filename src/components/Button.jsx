@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Button({
 	children,
@@ -22,14 +23,14 @@ function Button({
 	};
 
 	return to ? (
-		<a
-			href={to}
+		<Link
+			to={to}
 			className={btnClasses}
 			onClick={handleClick}
 			{...restProps}
 		>
 			<span className={spanClasses}>{children}</span>
-		</a>
+		</Link>
 	) : (
 		<button className={btnClasses} onClick={handleClick} {...restProps}>
 			<span className={spanClasses}>{children}</span>

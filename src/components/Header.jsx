@@ -1,9 +1,9 @@
 import { Container } from './';
 import PropTypes from 'prop-types';
 
-function Header({ children }) {
+function Header({ children, position = 'absolute' }) {
 	return (
-		<header className="absolute top-0 left-0 w-full z-50 py-4">
+		<header className={`${position} top-0 left-0 w-full z-50 py-4`}>
 			{children}
 		</header>
 	);
@@ -11,6 +11,13 @@ function Header({ children }) {
 
 Header.propTypes = {
 	children: PropTypes.any.isRequired,
+	position: PropTypes.oneOf([
+		'absolute',
+		'static',
+		'relative',
+		'fixed',
+		'sticky',
+	]),
 };
 
 Header.Content = function HeaderContent({ children }) {
