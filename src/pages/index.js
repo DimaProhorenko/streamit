@@ -5,3 +5,4 @@ export { default as Signin } from './Signin';
 export { default as Signup } from './Signup';
 export { default as SignupRegistration } from './SignupRegistration';
 export { default as SignupRegForm } from './SignupRegForm';
+export { default as SignupPlan } from './SignupPlan';

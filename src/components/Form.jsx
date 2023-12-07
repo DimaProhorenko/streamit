@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik, useField } from 'formik';
+import { Formik, Form as FormikForm, useField } from 'formik';
 import Button from './Button';
 
 function Form({ children, ...props }) {
 	return (
 		<Formik {...props}>
 			{/* <FormikForm>{children}</FormikForm> */}
-			{({ isValid, dirty }) =>
-				React.Children.map(children, (child) => {
-					if (React.isValidElement(child)) {
-						return React.cloneElement(child, { isValid, dirty });
-					}
-					return child;
-				})
-			}
+			{({ isValid, dirty }) => (
+				<FormikForm>
+					{React.Children.map(children, (child) => {
+						if (React.isValidElement(child)) {
+							return React.cloneElement(child, {
+								isValid,
+								dirty,
+							});
+						}
+						return child;
+					})}
+				</FormikForm>
+			)}
 		</Formik>
 	);
 }

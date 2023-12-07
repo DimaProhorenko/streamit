@@ -4,6 +4,7 @@ import {
 	HOME,
 	SIGN_IN,
 	SIGN_UP,
+	SIGN_UP_PLAN,
 	SIGN_UP_REGISTRATION,
 	SIGN_UP_REG_FORM,
 } from './constants/routes';
@@ -13,6 +14,7 @@ import {
 	NotFound,
 	Signin,
 	Signup,
+	SignupPlan,
 	SignupRegForm,
 	SignupRegistration,
 } from './pages';
@@ -33,6 +35,7 @@ function App() {
 						path={SIGN_UP_REG_FORM}
 						element={<SignupRegForm />}
 					/>
+					<Route path={SIGN_UP_PLAN} element={<SignupPlan />} />
 					<Route
 						index
 						element={<Navigate replace to={SIGN_UP_REGISTRATION} />}

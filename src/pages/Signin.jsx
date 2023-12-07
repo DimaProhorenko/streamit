@@ -2,7 +2,7 @@ import { object } from 'yup';
 
 import { BackImage, Section, Card, Title, Form, Link } from '../components';
 import { HeaderLogo } from '../feature';
-import { SIGN_UP } from '../constants/routes';
+import { ABSOLUTE_SIGN_UP } from '../constants/routes';
 import {
 	emailValidation,
 	passwordValidation,
@@ -52,7 +52,10 @@ function Signin() {
 							</Form>
 							<p className="mt-6 md:mt-8 lg:mt-9">
 								New to Streamit?{' '}
-								<Link to={SIGN_UP} className="text-white">
+								<Link
+									to={ABSOLUTE_SIGN_UP}
+									className="text-white"
+								>
 									Sign up now
 								</Link>
 							</p>
